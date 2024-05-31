@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Setting2.cs" />
+    <Compile Include="Flower.cs" />
+    <Compile Include="Bouquet.cs" />
+    <Compile Include="BouquetFlower.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Cashier.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,60 @@
+﻿@model CashierModel
+
+@{
+	var exists = Model != null && Model.Id != 0;
+	ViewBag.Title = (exists ? "Редактирование" : "Создание") + " Cashier";
+}
+
+<form asp-action="Update" asp-antiforgery="true" method="post">
+	<div class="row">
+		<input type="hidden" asp-for="Id"/>
+		<div class="col-md-4 col-sm-6">
+			<div class="form-group">
+				<label asp-for="LastName"></label>
+				<input type="text" asp-for="LastName" class="form-control"/>
+				<span asp-validation-for="LastName" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6">
+			<div class="form-group">
+				<label asp-for="FirstName"></label>
+				<input type="text" asp-for="FirstName" class="form-control"/>
+				<span asp-validation-for="FirstName" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6">
+			<div class="form-group">
+				<label asp-for="MiddleName"></label>
+				<input type="text" asp-for="MiddleName" class="form-control"/>
+				<span asp-validation-for="MiddleName" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6">
+			<div class="form-group">
+				<label asp-for="DateOfBirth"></label>
+				<input type="text" asp-for="DateOfBirth" class="form-control dateTimePicker"/>
+				<span asp-validation-for="DateOfBirth" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6">
+			<div class="form-group">
+				<label asp-for="PhoneNumber"></label>
+				<input type="text" asp-for="PhoneNumber" class="form-control"/>
+				<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6">
+			<div class="form-group">
+				<label asp-for="Experience"></label>
+				<input type="text" asp-for="Experience" class="form-control"/>
+				<span asp-validation-for="Experience" class="text-danger"></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<button class="btn btn-outline-primary" type="submit">@(exists ? "Сохранить" : "Добавить")</button>
+			<a asp-action="Index" class="btn btn-outline-secondary">Отмена</a>
+		</div>
+	</div>
+</form>
